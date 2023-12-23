@@ -15,6 +15,8 @@ public class Page {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
+	@FindBy(xpath = "//a[@class='urunadi']")
+	public List<WebElement> productNameElements;
 	
 	@FindBy(xpath = "//span[@class='degergetir']")
 	public List<WebElement> resulationElements;
@@ -28,8 +30,8 @@ public class Page {
 	@FindBy(xpath = "//li[@class='ozellik ozellik3974 cell']")
 	public List<WebElement> hertzElements;
 	
-	@FindBy(xpath = "//li[@class='ozellik ozellik3973 cell']")
-	public List<WebElement> screenTecnologhyElements;
+//	@FindBy(xpath = "//li[@class='ozellik ozellik3973 cell']")
+//	public List<WebElement> screenTecnologhyElements;
 	
 	@FindBy(xpath = "//li[@class='puan cell']/div/span[1]")
 	public List<WebElement> pointElements;
@@ -40,8 +42,6 @@ public class Page {
 			liste.add(element.getText());
 		}
 		return liste;
-	}
-
-	
+	}	
 	
 }
