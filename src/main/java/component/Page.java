@@ -1,9 +1,7 @@
 package component;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.xpath.XPath;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,8 +17,31 @@ public class Page {
 	}
 	
 	@FindBy(xpath = "//span[@class='degergetir']")
-	List<WebElement> resulationElements;
+	public List<WebElement> resulationElements;
 	
 	@FindBy(xpath = "//li[@class='fiyat cell']/a")
-	List<WebElement> priceElements;
+	public List<WebElement> priceElements;
+	
+	@FindBy(xpath = "//li[@class='ozellik ozellik3968 cell']")
+	public List<WebElement> inchElements;
+	
+	@FindBy(xpath = "//li[@class='ozellik ozellik3974 cell']")
+	public List<WebElement> hertzElements;
+	
+	@FindBy(xpath = "//li[@class='ozellik ozellik3973 cell']")
+	public List<WebElement> screenTecnologhyElements;
+	
+	@FindBy(xpath = "//li[@class='puan cell']/div/span[1]")
+	public List<WebElement> pointElements;
+	
+	public List<String> transferToStringList(List<WebElement> elementsList) {
+		List<String> liste = new ArrayList<>();
+		for(WebElement element : elementsList) {
+			liste.add(element.getText());
+		}
+		return liste;
+	}
+
+	
+	
 }
